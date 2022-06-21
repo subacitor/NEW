@@ -55,14 +55,20 @@ body{
     flex: 25%;
     color: dark;
 }
+
+#ModalEdit{
+    display: none;
+}
 .main{
     width: 100%;
-    height: 100%;
-    /* background: url(https://blog.visme.co/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-02.jpg); */
+    background: url(https://blog.visme.co/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-02.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 20px;
     flex: 65%;
+}
+.main img{
+    height: 100%    ;
 }
 table {
     font-family: arial;
@@ -236,12 +242,12 @@ input[type=text], select {
   box-shadow: none;
   transform: translateY(0);
 }
-#btnModalAdd, #btnModalCancel{
+#btnModalAdd, #btnModalCancel, #btnModalUpdate, #btnModalCancelEdit{
     border: none;
     padding: 10px;
     border-radius: 10px;
 }
-#btnModalAdd:hover , #btnModalCancel:hover{
+#btnModalAdd:hover , #btnModalCancel:hover ,  #btnModalUpdate:hover, #btnModalCancelEdit{
    background: #3B3B3B;
    transition: all 0.5s;
    color: white;
@@ -254,8 +260,13 @@ input[type=text], select {
     width: 10%;
 }
 .thu-2, .thu-3, .thu-4, .thu-5, .thu-6, .thu-7, .cn{
-    width: 30%;
+    width: 100%;
 }
+.data-time{
+    color: blue;
+    font-size: 20px;
+}
+
 
 
 @media screen and (max-width:1000px) {
@@ -278,6 +289,24 @@ input[type=text], select {
         display: block;
         padding: 0;
     }
-
+    .thead-test-table-2 tr{
+        font-size: 15px;
+        height: 30vh;
+        width: 100%;
+    }
+    .thead-test-table-2 th{
+        height: 30vh;
+        width: 0%;
+    }
+    .thead-test-table-2 td{
+        height: 30vh;
+        width: 1%;
+    }
+    .dc-week-day{
+        font-size: 15px !important;
+        font-weight: lighter;
+        text-align: center;
+    }
+    
 }
  

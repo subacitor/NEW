@@ -27,6 +27,7 @@ function loadData() {
                         "<td>" + data[i].T7 + "</td>" +
                         "<td>" + data[i].CN + "</td>" +
                         "<td>" +
+                        '<img id="editIMG" class="actionIcon" src="download.png" onclick="editE(' + data[i].id + ')" alt="Edit" srcset=" ">' + 
                         '<img class="actionIcon" src="2496733.png" onclick="deleteE(' + data[i].id + ')" alt="Delete" srcset=" ">' +
                         "</td>" +
                         "</tr>";
@@ -59,19 +60,19 @@ function loadData2() {
                 arrEle2 = data;
                 for (var i = 0; i < data.length; i++) {
                     strResult2 = strResult2 +
-                        "<td>" + data[i].time + data[i].T2 + "</td>"
+                        "<td>" + "<span class='data-time'>" + data[i].time + "</span>" + "<br>" + data[i].T2 + "</td>"
                     strResult3 = strResult3 +
-                        "<td>" + data[i].time + data[i].T3 + "</td>"
+                        "<td>" +"<span class='data-time'>" + data[i].time + "</span>" + "<br>" + data[i].T3 + "</td>"
                     strResult4 = strResult4 +
-                        "<td>" + data[i].time + data[i].T4 + "</td>"
+                        "<td>" + "<span class='data-time'>" + data[i].time + "</span>" + "<br>" + data[i].T4 + "</td>"
                     strResult5 = strResult5 +
-                        "<td>" + data[i].time + data[i].T5 + "</td>"
+                        "<td>" + "<span class='data-time'>" + data[i].time + "</span>" + "<br>" + data[i].T5 + "</td>"
                     strResult6 = strResult6 +
-                        "<td>" + data[i].time + data[i].T6 + "</td>"
+                        "<td>" + "<span class='data-time'>" + data[i].time + "</span>" + "<br>" + data[i].T6 + "</td>"
                     strResult7 = strResult7 +
-                        "<td>" + data[i].time + data[i].T7 + "</td>"
+                        "<td>" + "<span class='data-time'>" + data[i].time + "</span>" + "<br>" + data[i].T7 + "</td>"
                     strResultCN = strResultCN +
-                        "<td>" + data[i].time + data[i].CN + "</td>"
+                        "<td>" + "<span class='data-time'>" + data[i].time + "</span>" + "<br>" + data[i].CN + "</td>"
                 };
 
                 console.log(strResult2);
@@ -110,6 +111,30 @@ $("#btnModalAdd").click(function () {
     })
     console.log(data);
 });
+$("#btnModalUpdate").click(function(){
+    var dataUpdate = {};
+    dataUpdate.T2 = $("#T2Update").val();
+    dataUpdate.T3 = $("#T3Update").val();
+    dataUpdate.T4 = $("#T4Update").val();
+    dataUpdate.T5 = $("#T5Update").val();
+    dataUpdate.T6 = $("#T6Update").val();
+    dataUpdate.T7 = $("#T7Update").val();
+    dataUpdate.CN = $("#CNUpdate").val();
+    dataUpdate.time = $("#timeUpdate").val();
+    var id = $("#txtId").val();
+    console.log(dataUpdate);
+
+    $.ajax({
+        url: "https://62874cbde9494df61b35fb64.mockapi.io/dataCalendar/" + id,
+        type: "PUT",
+        data: dataUpdate,
+        success: function () {
+            //dong form
+            $("#ModalEdit").css("display", "none");
+            loadData();
+        }
+    })
+});
 
 // ============================================================
 //Delete Function
@@ -124,3 +149,38 @@ function deleteE(id) {
     })
 }
 
+// ============================================================
+//Edit Function
+
+function editE(id){
+    $("#ModalEdit").css("display", "block");
+    for (var i = 0; i < arrEle.length; i++) {
+
+        if (arrEle[i].id == id) {
+            $("#txtId").val(arrEle[i].id);
+            $("#T2Update").val(arrEle[i].T2);
+            $("#T3Update").val(arrEle[i].T3);
+            $("#T4Update").val(arrEle[i].T4);
+            $("#T5Update").val(arrEle[i].T5);
+            $("#T6Update").val(arrEle[i].T6);
+            $("#T7Update").val(arrEle[i].T7); 
+            $("#CNUpdate").val(arrEle[i].CN);
+            $("#timeUpdate").val(arrEle[i].time);
+            break;
+        }
+    }
+    loadData();
+}
+$("#editIMG").click(function(){
+    $("#ModalEdit").css("display","block");
+})
+$("#btnModalCancelEdit").click(function(){
+    $("#ModalEdit").css("display","none");
+})
+
+$("#addModal").click(function () {
+    $("#form-to-add").css("display", "block");
+})
+$("#btnModalCancel").click(function () {
+    $("#form-to-add").css("display", "none");
+})

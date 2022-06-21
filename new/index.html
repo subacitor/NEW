@@ -33,20 +33,17 @@
                     <li><a href=""><i class="fa-solid fa-calendar" style="padding: 0px 10px;"></i>Me</a></li>
                     <li><a href=""><i class="fa-solid fa-calendar" style="padding: 0px 10px;"></i>Test</a></li>
                     <li><a href=""><i class="fa-solid fa-calendar" style="padding: 0px 10px;"></i>Support</a></li>
-                    <!-- <li id="guest-mode"><a></i>GUEST</a></li> -->
                 </ul>
             </div>
         </div>
         <div class="main">
             <div class="header-main">
                 <span>Calendar LAB</span>
-                <div>
-
-                </div>
             </div>
-
+            <!-- ================================================================================================= -->
+                                                    <!-- Calendar 1 -->
             <!-- week 1 -->
-            <div class="test-table">
+            <div class="test-table" id="test-table">
                 <div class="date-current-fill">...</div>
                 <table class="table" id="tblAct">
                     <thead>
@@ -64,15 +61,15 @@
                         </tr>
                     </thead>
                     <tbody id="tblAct">
-
                     </tbody>
                 </table>
             </div>
-
+            <!-- ================================================================================================= -->
+                                                    <!-- Calendar Responsive -->
             <div class="test-table-2">
                 <div class="date-current-fill-2">...</div>
                 <table class="table2" id="tblAct2">
-                    <thead>
+                    <thead class="thead-test-table-2">
                         <tr>
                             <th class="dc-week-day">Thứ hai</th>
                             <td class="thu-2"></td>
@@ -81,7 +78,7 @@
                             <th class="dc-week-day">Thứ ba</th>
                             <td class="thu-3"></td>
                         </tr>
-                        <tr >
+                        <tr>
                             <th class="dc-week-day">Thứ tư</th>
                             <td class="thu-4"></td>
                         </tr>
@@ -102,17 +99,11 @@
                             <td class="cn"></td>
                         </tr>
                     </thead>
-                    <!-- <tbody id="tblAct2">
-                      
-                    </tbody> -->
                 </table>
             </div>
-
-            
-
-            
         </div>
-
+        <!-- ================================================================================================= -->
+                                                    <!-- Form to add -->
         <div class="modal">
             <button id="addModal">+</button>
             <form id="form-to-add">
@@ -120,7 +111,7 @@
                     <span id="txtId"></span>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="" id="time" placeholder="Thoi gian">
+                    <input class="form-control" type="text" name="" id="time" placeholder="Thời gian">
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="text" name="" id="T2" placeholder="Thứ 2">
@@ -151,45 +142,51 @@
                     <button type="button" class="btn btn-secondary" id="btnModalCancel">CANCEL</button>
                 </div>
             </form>
-
             <!-- ================================================================================================= -->
+                                                    <!-- Modal to edit -->
+            <div id="ModalEdit">
+                <form id="form-to-edit">
+                    <div class="form-group">
+                        <span id="txtId"></span>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="" id="timeUpdate" placeholder="Thời gian">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="" id="T2Update" placeholder="Thứ 2">
+                    </div>
+    
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="" id="T3Update" placeholder="Thứ 3">
+                    </div>
+    
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="" id="T4Update" placeholder="Thứ 4">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="" id="T5Update" placeholder="Thứ 5">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="" id="T6Update" placeholder="Thứ 6">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="" id="T7Update" placeholder="Thứ 7">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="" id="CNUpdate" placeholder="Chủ nhật">
+                    </div>
+    
+                    <div class="form-group d-flex justify-content-end">
+                        <button type="button" class="btn btn-primary" id="btnModalUpdate">UPDATE</button>
+                        <button type="button" class="btn btn-secondary" id="btnModalCancelEdit">CANCEL</button>
+                    </div>
+                </form>
+                <!-- ================================================================================================= -->
+            </div>
         </div>
         <button type="button" class="scroll-to-top btn-position btnstyle"><i class="fa-solid fa-angle-up"></i></button>
     </div>
-
-
-    <script src="app.js"></script>
-    <script>
-        const btnstyle = document.querySelector(".btnstyle");
-        btnstyle.addEventListener("click", function () {
-            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-        });
-        window.addEventListener("scroll", () => {
-            if (window.pageYOffset > 70) {
-                btnstyle.classList.add("active");
-            } else {
-                btnstyle.classList.remove("active");
-            }
-        });
-    </script>
-
-    <script>
-        $("#guest-mode").click(function () {
-            $(".modal").hide();
-            $("#action-for-ad").hide();
-        })
-    </script>
-
-    <script>
-        $("#addModal").click(function () {
-            $("#form-to-add").css("display", "block");
-        })
-        $("#btnModalCancel").click(function () {
-            $("#form-to-add").css("display", "none");
-        })
-    </script>
-
-
+    <script src="scrollToTop.js"></script>
     <script src="api.js"></script>
 </body>
 
