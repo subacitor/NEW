@@ -22,8 +22,9 @@
                 <img onclick="location.href='#'" style="cursor: pointer"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcUV-LJzXmSm5T84lG2U-balWkOL8f02CM9zhoonO1ZDwCD63fVJM61zCn4tE0KW4YyF0&usqp=CAU"
                     alt="">
-                <div><span>ADMIN</span></div>
+                <div><span>GUEST</span></div>
             </div>
+            <hr style="background: rgb(175, 168, 168) !important; padding: 0.5px; border: none; margin: 10px;">
             <div class="menu">
                 <ul>
                     <li><a href=""><i class="fa-solid fa-calendar" style="padding: 0px 10px;"></i>Calendar</a></li>
@@ -32,6 +33,20 @@
                     <li><a href=""><i class="fa-solid fa-calendar" style="padding: 0px 10px;"></i>Test</a></li>
                     <li><a href=""><i class="fa-solid fa-calendar" style="padding: 0px 10px;"></i>Support</a></li>
                 </ul>
+                <hr style="background: rgb(175, 168, 168) !important; padding: 0.5px; border: none; margin: 10px;">
+               <div class="sukien" style="padding: 20px;">
+                    <h4>Sự kiện</h4>
+                    <div>
+                        <p>Trường Đại học Lạc Hồng là trường đại học tư thục đầu tiên tại tỉnh Đồng Nai. Trường có trụ sở tại Số 10 Huỳnh Văn Nghệ, phường Bửu Long, thành phố Biên Hòa, tỉnh Đồng Nai. Trường được thành lập theo quyết định số 790/TTg Thủ tướng thành lập ngày 24/9/1997.</p>
+                    </div>
+                    <div>
+                        <p>Trường Đại học Lạc Hồng là trường đại học tư thục đầu tiên tại tỉnh Đồng Nai. Trường có trụ sở tại Số 10 Huỳnh Văn Nghệ, phường Bửu Long, thành phố Biên Hòa, tỉnh Đồng Nai. Trường được thành lập theo quyết định số 790/TTg Thủ tướng thành lập ngày 24/9/1997.</p>
+                    </div>
+                    <div>
+                        <p>Trường Đại học Lạc Hồng là trường đại học tư thục đầu tiên tại tỉnh Đồng Nai. Trường có trụ sở tại Số 10 Huỳnh Văn Nghệ, phường Bửu Long, thành phố Biên Hòa, tỉnh Đồng Nai. Trường được thành lập theo quyết định số 790/TTg Thủ tướng thành lập ngày 24/9/1997.</p>
+                    </div>
+               </div>
+               <i class="fa-solid fa-right-from-bracket fa-2x" style="padding: 20px;"></i>
             </div>
         </div>
         <div class="main">
@@ -46,7 +61,6 @@
                 <table class="table" id="tblAct">
                     <thead>
                         <tr style="border: 1px solid gray">
-                            <!-- <th scope="col" style="border: 1px solid gray"><span>#</span></th> -->
                             <th scope="col" style="border: 1px solid gray"><span></span></th>
                             <th scope="col" style="border: 1px solid gray"><span>Thứ hai</span></th>
                             <th scope="col" style="border: 1px solid gray"><span>Thứ ba</span></th>
@@ -55,7 +69,6 @@
                             <th scope="col" style="border: 1px solid gray"><span>Thứ sáu</span></th>
                             <th scope="col" style="border: 1px solid gray"><span>Thứ bảy</span></th>
                             <th scope="col" style="border: 1px solid gray"><span>Chủ nhật</span></th>
-                            <th scope="col" style="border: 1px solid gray" id="action-for-ad"><span>ACTION</span></th>
                         </tr>
                     </thead>
                     <tbody id="tblAct">
@@ -100,88 +113,10 @@
                 </table>
             </div>
         </div>
-        <!-- ================================================================================================= -->
-        <!-- Form to add -->
+        
         <div class="modal">
-            <button id="addModal">+</button>
-            <form id="form-to-add">
-                <div class="form-group">
-                    <span id="txtId"></span>
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="" id="time" placeholder="Thời gian">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="" id="T2" placeholder="Thứ 2">
-                </div>
-
-                <div class="form-group">
-                    <input class="form-control" type="text" name="" id="T3" placeholder="Thứ 3">
-                </div>
-
-                <div class="form-group">
-                    <input class="form-control" type="text" name="" id="T4" placeholder="Thứ 4">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="" id="T5" placeholder="Thứ 5">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="" id="T6" placeholder="Thứ 6">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="" id="T7" placeholder="Thứ 7">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="" id="CN" placeholder="Chủ nhật">
-                </div>
-
-                <div class="form-group d-flex justify-content-end">
-                    <button type="button" class="btn btn-primary" id="btnModalAdd">ADD</button>
-                    <button type="button" class="btn btn-secondary" id="btnModalCancel">CANCEL</button>
-                </div>
-            </form>
-            <!-- ================================================================================================= -->
-            <!-- Modal to edit -->
-            <div id="ModalEdit">
-                <form id="form-to-edit">
-                    <div class="form-group">
-                        <span id="txtId"></span>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="" id="timeUpdate" placeholder="Thời gian">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="" id="T2Update" placeholder="Thứ 2">
-                    </div>
-
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="" id="T3Update" placeholder="Thứ 3">
-                    </div>
-
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="" id="T4Update" placeholder="Thứ 4">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="" id="T5Update" placeholder="Thứ 5">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="" id="T6Update" placeholder="Thứ 6">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="" id="T7Update" placeholder="Thứ 7">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="" id="CNUpdate" placeholder="Chủ nhật">
-                    </div>
-
-                    <div class="form-group d-flex justify-content-end">
-                        <button type="button" class="btn btn-primary" id="btnModalUpdate">UPDATE</button>
-                        <button type="button" class="btn btn-secondary" id="btnModalCancelEdit">CANCEL</button>
-                    </div>
-                </form>
-                <!-- ================================================================================================= -->
-                
-            </div>
+           
+           
         </div>
         <button type="button" class="scroll-to-top btn-position btnstyle"><i class="fa-solid fa-angle-up"></i></button>
 
@@ -189,7 +124,7 @@
 
     </div>
     <script src="scrollToTop.js"></script>
-    <script src="api.js"></script>
+    <script src="guest.js"></script>
 </body>
 
 </html>
